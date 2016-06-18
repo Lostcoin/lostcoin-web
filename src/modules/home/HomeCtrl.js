@@ -10,6 +10,8 @@ angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', f
 
         $scope.initialize = function () {
 
+            $rootScope.pageTitle = 'Lostcoin - Home';
+
             $scope.user = {
                 firstName: null,
                 lastName: null
@@ -22,15 +24,21 @@ angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', f
             $rootScope.user = $scope.user.firstName + ' ' + $scope.user.lastName;
 
             sessionStorage.user = $rootScope.user;
-            
+
             $rootScope.changeState('report.individual');
 
         };
 
         /* --- RUN --- */
 
-        $rootScope.pageTitle = 'Lostcoin - Home';
+        if ($rootScope.user === null) {
 
-        $scope.initialize();
+            $scope.initialize();
+
+        } else {
+
+            $rootScope.changeState('report.individual');
+
+        }
 
     }]);

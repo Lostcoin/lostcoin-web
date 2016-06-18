@@ -2,46 +2,32 @@
 
     <section ng-hide="$root.user === null">
 
-        <!-- Expenses -->
+        <!-- Transactions -->
 
-        <md-subheader class="md-no-sticky">Expenses</md-subheader>
+        <md-subheader class="md-no-sticky">Transactions</md-subheader>
 
-        <md-list-item ng-click="$root.changeState('expense.add')">
-            <img ng-src="img/ic_money_off_black_24px.svg" alt="Add Expense">
-            <span>&nbsp;Add Expense</span>
+        <md-list-item ng-click="$root.changeState('transaction.form')">
+            <img ng-src="img/ic_attach_money_black_24px.svg" alt="Add Transaction">
+            <span>&nbsp;Add Transaction</span>
         </md-list-item>
 
-        <md-list-item ng-click="$root.changeState('expense.browse')">
-            <img ng-src="img/ic_money_off_black_24px.svg" alt="All Expenses">
-            <span>&nbsp;All Expenses</span>
-        </md-list-item>
-
-        <!-- Incomes -->
-
-        <md-subheader class="md-no-sticky">Incomes</md-subheader>
-
-        <md-list-item ng-click="$root.changeState('income.add')">
-            <img ng-src="img/ic_attach_money_black_24px.svg" alt="Add Income">
-            <span>&nbsp;Add Income</span>
-        </md-list-item>
-
-        <md-list-item ng-click="$root.changeState('income.browse')">
-            <img ng-src="img/ic_attach_money_black_24px.svg" alt="All Incomes">
-            <span>&nbsp;All Incomes</span>
+        <md-list-item ng-click="$root.changeState('transaction.browse')">
+            <img ng-src="img/ic_attach_money_black_24px.svg" alt="Browse All">
+            <span>&nbsp;Browse All</span>
         </md-list-item>
 
         <!-- Catgeories -->
 
         <md-subheader class="md-no-sticky">Categories</md-subheader>
 
-        <md-list-item ng-click="$root.changeState('category.add')">
+        <md-list-item ng-click="$root.changeState('category.form')">
             <img ng-src="img/ic_bubble_chart_black_24px.svg" alt="Add Category">
             <span>&nbsp;Add Category</span>
         </md-list-item>
 
         <md-list-item ng-click="$root.changeState('category.browse')">
-            <img ng-src="img/ic_bubble_chart_black_24px.svg" alt="All Categories">
-            <span>&nbsp;All Categories</span>
+            <img ng-src="img/ic_bubble_chart_black_24px.svg" alt="Browse All">
+            <span>&nbsp;Browse All</span>
         </md-list-item>
 
         <!-- Weekly Reports -->
