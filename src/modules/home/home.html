@@ -1,12 +1,14 @@
 <div layout="row" layout-align="center center" layout-fill>
+
     <md-card flex="25" style="margin-top: -150px;">
         <md-card-content>
+
             <form name="loginForm" id="login-form">
                 <div layout="column">
 
                     <md-input-container>
                         <label>First Name</label>
-                        <input required type="text" name="firstName" ng-model="$root.username" md-autofocus>
+                        <input required type="text" name="firstName" ng-model="user.firstName" md-autofocus>
                         <div ng-messages="loginForm.username.$error" role="alert">
                             <span ng-message=required>This is required.</span>
                         </div>
@@ -14,7 +16,7 @@
 
                     <md-input-container>
                         <label>Last Name</label>
-                        <input required type="password" name="password" ng-model="credentials.password">
+                        <input required type="text" name="lastName" ng-model="user.lastName">
                         <div ng-messages="loginForm.password.$error" role="alert">
                             <span ng-message="required">This is required.</span>
                         </div>
@@ -24,6 +26,8 @@
 
                 </div>
             </form>
+
         </md-card-content>
     </md-card>
+
 </div>

@@ -51,8 +51,8 @@
                 </md-button>
                 <a ui-sref="home">Lostcoin</a>
                 <span flex></span>
-                <md-button class="md-icon-button" aria-label="User">
-                    <md-tooltip md-direction="left">Logged in as {{$root.user}}</md-tooltip>
+                <md-button ng-hide="$root.user === null" class="md-icon-button" aria-label="User">
+                    <md-tooltip md-direction="left">{{$root.user}}</md-tooltip>
                     <md-icon md-svg-src="img/ic_account_circle_white_24px.svg"></md-icon>
                 </md-button>
             </div>

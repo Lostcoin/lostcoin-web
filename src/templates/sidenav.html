@@ -2,18 +2,6 @@
 
     <section ng-hide="$root.user === null">
 
-        <md-subheader class="md-no-sticky">Incomes</md-subheader>
-
-        <md-list-item ng-click="$root.changeState('income.add')">
-            <img ng-src="img/ic_attach_money_black_24px.svg" alt="Add Income">
-            <span>&nbsp;Add Income</span>
-        </md-list-item>
-
-        <md-list-item ng-click="$root.changeState('income.browse')">
-            <img ng-src="img/ic_attach_money_black_24px.svg" alt="All Incomes">
-            <span>&nbsp;All Incomes</span>
-        </md-list-item>
-
         <!-- Expenses -->
 
         <md-subheader class="md-no-sticky">Expenses</md-subheader>
@@ -26,6 +14,20 @@
         <md-list-item ng-click="$root.changeState('expense.browse')">
             <img ng-src="img/ic_money_off_black_24px.svg" alt="All Expenses">
             <span>&nbsp;All Expenses</span>
+        </md-list-item>
+
+        <!-- Incomes -->
+
+        <md-subheader class="md-no-sticky">Incomes</md-subheader>
+
+        <md-list-item ng-click="$root.changeState('income.add')">
+            <img ng-src="img/ic_attach_money_black_24px.svg" alt="Add Income">
+            <span>&nbsp;Add Income</span>
+        </md-list-item>
+
+        <md-list-item ng-click="$root.changeState('income.browse')">
+            <img ng-src="img/ic_attach_money_black_24px.svg" alt="All Incomes">
+            <span>&nbsp;All Incomes</span>
         </md-list-item>
 
         <!-- Catgeories -->

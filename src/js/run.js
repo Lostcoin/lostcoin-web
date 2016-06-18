@@ -16,7 +16,9 @@ angular.module('lostcoin-web').run(['$mdSidenav', '$rootScope', '$state', functi
 
             $rootScope.pageTitle = 'Lostcoin';
 
-            $rootScope.user = null;
+            var user = sessionStorage.user;
+
+            $rootScope.user = user ? user : null;
 
         };
 
