@@ -18,7 +18,7 @@
 
     </head>
 
-    <body layout="row">
+    <body class="bg" layout="row">
 
     <md-sidenav md-component-id="sidenav" class="md-sidenav-left" layout="column">
         <md-toolbar>
@@ -33,6 +33,13 @@
         <md-content>
             <div ng-include="'templates/sidenav.html'"></div>
         </md-content>
+        <span flex></span>
+        <section ng-show="$root.user === null">
+            <md-divider></md-divider>
+            <div style="text-align: center;" layout-padding>
+                Enter your name to log in.
+            </div>
+        </section>
     </md-sidenav>
 
     <div layout="column" layout-fill>
@@ -51,7 +58,7 @@
             </div>
         </md-toolbar>
 
-        <md-content ui-view></md-content>
+        <md-content class="bg" ui-view></md-content>
 
     </div>
 
