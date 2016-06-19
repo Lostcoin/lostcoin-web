@@ -30,7 +30,7 @@ angular.module('lostcoin-web').controller('TransactionFormCtrl', ['$rootScope', 
 
         $scope.getCategories = function () {
 
-            categoryService.getUserCategories($rootScope.user.id).then(function (response) {
+            categoryService.getCategories($rootScope.user.id).then(function (response) {
 
                 $scope.categories = $scope.categories.concat(response.data);
 

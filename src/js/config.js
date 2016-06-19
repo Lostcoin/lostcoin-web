@@ -18,6 +18,24 @@ angular.module('lostcoin-web').config(['$compileProvider', '$mdThemingProvider',
                     url: '/'
                 })
 
+                .state('category', {
+                    abstract: true,
+                    template: '<ui-view/>',
+                    url: '/category'
+                })
+
+                .state('category.browse', {
+                    controller: 'CategoryBrowseCtrl',
+                    templateUrl: 'modules/category/category-browse.html',
+                    url: '/browse'
+                })
+
+                .state('category.form', {
+                    controller: 'CategoryFormCtrl',
+                    templateUrl: 'modules/category/category-form.html',
+                    url: '/form'
+                })
+
                 .state('transaction', {
                     abstract: true,
                     template: '<ui-view/>',

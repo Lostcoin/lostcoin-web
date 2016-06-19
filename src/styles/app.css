@@ -8,3 +8,7 @@
 
 .transaction-tile {
   width: 250px; }
+
+.category-tile {
+  overflow: hidden;
+  width: 250px; }
