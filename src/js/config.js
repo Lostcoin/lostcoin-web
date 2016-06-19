@@ -20,7 +20,6 @@ angular.module('lostcoin-web').config(['$compileProvider', '$mdThemingProvider',
 
                 .state('transaction', {
                     abstract: true,
-                    controller: 'TransactionCtrl',
                     template: '<ui-view/>',
                     url: '/transaction'
                 })

@@ -1,1 +1,20 @@
-<h1>Transaction Browse</h1>
+<md-toolbar class="secondary-toolbar">
+    <div class="md-toolbar-tools">
+        <span>Browse Transactions</span>
+    </div>
+</md-toolbar>
+
+<div layout="row" layout-wrap layout-align="space-around center">
+
+    <md-card class="transaction-tile" ng-repeat="transaction in transactions">
+
+        <md-card-content>
+            <h1>{{transaction.amount}}</h1>
+            <p>{{transaction.date| date:'dd/MMM/yyyy' }}</p>
+            <small ng-show="transaction.hasOwnProperty('category')">{{transaction.category.name}}</small>
+            <small ng-hide="transaction.hasOwnProperty('category')">Uncategorised</small>
+        </md-card-content>
+
+    </md-card>
+
+</div>

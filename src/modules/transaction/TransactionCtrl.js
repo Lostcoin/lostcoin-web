@@ -4,31 +4,8 @@ angular.module('lostcoin-web').controller('TransactionCtrl', ['$rootScope', '$sc
 
         /* --- MODELS --- */
 
-        // $scope.transaction
-
         /* --- FUNCTIONS --- */
 
-        $scope.initialize = function () {
-
-            $scope.transaction = {
-                amount: 0,
-                category: 0,
-                date: new Date(),
-                user: null
-            };
-
-        };
-
         /* --- RUN --- */
-
-        if ($rootScope.user === null) {
-
-            $rootScope.changeState('home');
-
-        } else {
-
-            $scope.initialize();
-
-        }
 
     }]);

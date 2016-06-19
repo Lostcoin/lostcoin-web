@@ -18,6 +18,14 @@ angular.module('lostcoin-web').controller('TransactionFormCtrl', ['$rootScope', 
 
             $scope.getCategories();
 
+            $scope.transaction = {
+                id: 0,
+                amount: 0,
+                category: 0,
+                date: new Date(),
+                user: null
+            };
+
         };
 
         $scope.getCategories = function () {
@@ -44,11 +52,17 @@ angular.module('lostcoin-web').controller('TransactionFormCtrl', ['$rootScope', 
 
             }
 
+            if (transaction.id === 0) {
+
+                delete transaction.id;
+
+            }
+
             transactionService.save(transaction).then(function (response) {
 
                 utilityService.notify('Transaction saved!');
 
-                $rootScope.changeState('report.individual');
+                $rootScope.changeState('transaction.browse');
 
             });
 

@@ -27,7 +27,7 @@ angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', '
 
                 sessionStorage.user = JSON.stringify($rootScope.user);
 
-                $rootScope.changeState('report.individual');
+                $rootScope.changeState('transaction.browse');
 
             });
 
@@ -41,7 +41,7 @@ angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', '
 
         } else {
 
-            $rootScope.changeState('report.individual');
+            $rootScope.changeState('transaction.browse');
 
         }
 

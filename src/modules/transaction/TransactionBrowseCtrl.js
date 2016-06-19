@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('lostcoin-web').controller('TransactionBrowseCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+angular.module('lostcoin-web').controller('TransactionBrowseCtrl', ['$rootScope', '$scope', 'transactionService', function ($rootScope, $scope, transactionService) {
 
         /* --- MODELS --- */
 
-        // $scope.transaction
         // $scope.transactions
 
         /* --- FUNCTIONS --- */
@@ -17,17 +16,13 @@ angular.module('lostcoin-web').controller('TransactionBrowseCtrl', ['$rootScope'
 
         };
 
-        $scope.editTransaction = function (transaction) {
-
-            $scope.transaction = transaction;
-
-            $rootScope.changeState('transaction.form');
-
-        };
-
         $scope.getTransactions = function () {
 
-            $scope.transactions = [];
+            transactionService.getTransactions($rootScope.user.id).then(function (response) {
+
+                $scope.transactions = response.data;
+
+            });
 
         };
 
