@@ -11,8 +11,10 @@ angular.module('lostcoin-web').controller('TransactionCtrl', ['$rootScope', '$sc
         $scope.initialize = function () {
 
             $scope.transaction = {
-                amount: null,
-                category: null
+                amount: 0,
+                category: 0,
+                date: new Date(),
+                user: null
             };
 
         };

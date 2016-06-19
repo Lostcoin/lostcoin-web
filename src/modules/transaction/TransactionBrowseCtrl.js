@@ -27,11 +27,7 @@ angular.module('lostcoin-web').controller('TransactionBrowseCtrl', ['$rootScope'
 
         $scope.getTransactions = function () {
 
-            $rootScope.nascent = true;
-
             $scope.transactions = [];
-
-            $rootScope.nascent = false;
 
         };
 

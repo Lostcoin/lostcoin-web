@@ -4,15 +4,12 @@ angular.module('lostcoin-web').run(['$mdSidenav', '$rootScope', '$state', functi
 
         /* --- MODELS --- */
 
-        // $rootScope.nascent;
         // $rootScope.pageTitle;
         // $rootScope.user;
 
         /* --- FUNCTIONS --- */
 
         $rootScope.initialize = function () {
-
-            $rootScope.nascent = false;
 
             $rootScope.pageTitle = 'Lostcoin';
 
@@ -55,12 +52,6 @@ angular.module('lostcoin-web').run(['$mdSidenav', '$rootScope', '$state', functi
         $rootScope.openSidenav = function () {
 
             $mdSidenav('sidenav').open();
-
-        };
-
-        $rootScope.setNascentState = function (bool) {
-
-            $rootScope.nascent = bool;
 
         };
 

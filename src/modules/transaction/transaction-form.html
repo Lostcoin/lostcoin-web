@@ -12,15 +12,15 @@
             <form name="transactionForm" id="transaction-form">
                 <div layout="column">
 
-                    <md-input-container>
+                    <md-input-container class="md-block">
                         <label>Amount</label>
-                        <input required type="number" step="0.01" name="amount" ng-model="transaction.amount" md-autofocus>
+                        <input required type="number" min="0.01" step="0.01" name="amount" ng-model="transaction.amount" md-autofocus>
                         <div ng-messages="transactionForm.amount.$error" role="alert">
                             <span ng-message=required>This is required.</span>
                         </div>
                     </md-input-container>
 
-                    <md-input-container>
+                    <md-input-container class="md-block">
                         <label>Date</label>
                         <input required type="date" name="date" ng-model="transaction.date">
                         <div ng-messages="transactionForm.date.$error" role="alert">
@@ -28,15 +28,20 @@
                         </div>
                     </md-input-container>
 
-                    <md-input-container>
+                    <md-input-container class="md-block">
                         <label>Category</label>
-                        <input required type="text" name="category" ng-model="transaction.category">
+                        <md-select name="category" ng-model="transaction.category" required>
+                            <md-option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</md-option>
+                        </md-select>
                         <div ng-messages="transactionForm.category.$error" role="alert">
                             <span ng-message="required">This is required.</span>
                         </div>
                     </md-input-container>
 
-                    <md-button type="submit" form="transaction-form" class="md-block md-primary md-raised" ng-click="saveTransaction()" ng-disabled="transactionForm.$invalid || $root.nascent">Save</md-button>
+                    <div layout="row">
+                        <md-button flex type="submit" form="transaction-form" class="md-block md-primary md-raised" ng-click="saveTransaction(1)" ng-disabled="transactionForm.$invalid">Income</md-button>
+                        <md-button flex type="submit" form="transaction-form" class="md-block md-primary md-raised" ng-click="saveTransaction(-1)" ng-disabled="transactionForm.$invalid">Expense</md-button>
+                    </div>
 
                 </div>
             </form>
