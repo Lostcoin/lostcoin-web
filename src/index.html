@@ -52,7 +52,7 @@
                 <a ui-sref="home">Lostcoin</a>
                 <span flex></span>
                 <md-button ng-hide="$root.user === null" class="md-icon-button" aria-label="User">
-                    <md-tooltip md-direction="left">{{$root.user}}</md-tooltip>
+                    <md-tooltip md-direction="left">{{$root.user.firstName + ' ' + $root.user.lastName}}</md-tooltip>
                     <md-icon md-svg-src="img/ic_account_circle_white_24px.svg"></md-icon>
                 </md-button>
             </div>
@@ -80,6 +80,7 @@
     <script src="js/run.js"></script>
 
     <!-- Modules -->
+    <script src="modules/common/userService.js"></script>
     <script src="modules/common/utilityService.js"></script>
 
     <script src="modules/home/HomeCtrl.js"></script>

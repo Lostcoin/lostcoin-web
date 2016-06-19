@@ -18,7 +18,7 @@ angular.module('lostcoin-web').run(['$mdSidenav', '$rootScope', '$state', functi
 
             var user = sessionStorage.user;
 
-            $rootScope.user = user ? user : null;
+            $rootScope.user = user ? JSON.parse(user) : null;
 
         };
 
