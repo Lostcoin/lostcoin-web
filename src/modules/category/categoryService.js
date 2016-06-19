@@ -18,6 +18,22 @@ angular.module('lostcoin-web').service('categoryService', ['$http', 'utilityServ
 
         };
 
+        this.saveCategory = function (category) {
+
+            return $http.post('http://localhost:1337/category', category).then(function (response) {
+
+                return response;
+
+            }, function (err) {
+
+                utilityService.notify('Save failed.');
+
+                return err;
+
+            });
+
+        };
+
         this.deleteCategory = function (categoryID) {
 
             return $http.delete('http://localhost:1337/category/' + categoryID).then(function (response) {

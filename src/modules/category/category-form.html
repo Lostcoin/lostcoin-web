@@ -1,1 +1,33 @@
-<h1>Form</h1>
+<md-toolbar class="secondary-toolbar">
+    <div class="md-toolbar-tools">
+        <span>Add Category</span>
+    </div>
+</md-toolbar>
+
+<div layout="row" layout-align="center start">
+
+    <md-card flex="30">
+        <md-card-content>
+
+            <form name="categoryForm" id="category-form">
+                <div layout="column">
+
+                    <md-input-container class="md-block">
+                        <label>Name</label>
+                        <input required type="text" name="name" ng-model="category.name" md-autofocus>
+                        <div ng-messages="categoryForm.name.$error" role="alert">
+                            <span ng-message=required>This is required.</span>
+                        </div>
+                    </md-input-container>
+
+                    <div layout="row">
+                        <md-button flex type="submit" form="category-form" class="md-block md-primary md-raised" ng-click="saveCategory()" ng-disabled="categoryForm.$invalid">Save</md-button>
+                    </div>
+
+                </div>
+            </form>
+
+        </md-card-content>
+    </md-card>
+
+</div>

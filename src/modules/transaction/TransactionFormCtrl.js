@@ -40,7 +40,7 @@ angular.module('lostcoin-web').controller('TransactionFormCtrl', ['$rootScope', 
 
         $scope.saveTransaction = function (type) {
 
-            var transaction = $scope.transaction;
+            var transaction = angular.copy($scope.transaction);
 
             transaction.amount *= type;
 
