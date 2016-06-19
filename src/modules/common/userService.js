@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lostcoin-web').service('userService', ['$http', function ($http) {
+angular.module('lostcoin-web').service('userService', ['$http', 'utilityService', function ($http, utilityService) {
 
         this.login = function (user) {
 
@@ -9,6 +9,8 @@ angular.module('lostcoin-web').service('userService', ['$http', function ($http)
                 return response;
 
             }, function (err) {
+
+                utilityService.notify('Login failed.');
 
                 return err;
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', 'userService', 'utilityService', function ($rootScope, $scope, userService, utilityService) {
+angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', 'userService', function ($rootScope, $scope, userService) {
 
         /* --- MODELS --- */
 
@@ -23,19 +23,11 @@ angular.module('lostcoin-web').controller('HomeCtrl', ['$rootScope', '$scope', '
 
             userService.login($scope.user).then(function (response) {
 
-                if (!response) {
+                $rootScope.user = response.data;
 
-                    utilityService.notify('Login failed.');
+                sessionStorage.user = JSON.stringify($rootScope.user);
 
-                } else {
-
-                    $rootScope.user = response.data;
-                    
-                    sessionStorage.user = JSON.stringify($rootScope.user);
-
-                    $rootScope.changeState('report.individual');
-
-                }
+                $rootScope.changeState('report.individual');
 
             });
 
