@@ -4,7 +4,7 @@ angular.module('lostcoin-web').service('reportService', ['$http', 'utilityServic
 
         this.getCategoryDistribution = function (userID) {
 
-            return $http.get('http://localhost:1337/statistics/category-distribution?userID=' + userID).then(function (response) {
+            return $http.get('http://localhost:1337/statistics?userID=' + userID).then(function (response) {
 
                 return response;
 
