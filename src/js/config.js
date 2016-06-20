@@ -36,6 +36,24 @@ angular.module('lostcoin-web').config(['$compileProvider', '$mdThemingProvider',
                     url: '/form'
                 })
 
+                .state('report', {
+                    abstract: true,
+                    template: '<ui-view/>',
+                    url: '/report'
+                })
+
+                .state('report.individual', {
+                    controller: 'ReportIndividualCtrl',
+                    templateUrl: 'modules/report/report-individual.html',
+                    url: '/individual'
+                })
+
+                .state('report.family', {
+                    controller: 'ReportFamilyCtrl',
+                    templateUrl: 'modules/report/report-family.html',
+                    url: '/family'
+                })
+
                 .state('transaction', {
                     abstract: true,
                     template: '<ui-view/>',
